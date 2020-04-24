@@ -16,6 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('url')->unique()->nullable();
             $table->mediumText('excerpt')->nullable();
             $table->text('body')->nullable();
             $table->enum('estatus', ['published','draft'])->default('published')->nullable();

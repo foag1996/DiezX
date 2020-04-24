@@ -18,8 +18,10 @@ use Illuminate\Support\Str;
 */
 
 $factory->define(Post::class, function (Faker $faker) {
+	$title = $faker->company;
     return [
-        'title' => $faker->company,
+        'title' => $title,
+        'url' => Str::slug($title),
         'excerpt' => $faker->text($maxNbChars = 100),
         'body' => $faker->text($maxNbChars = 200),
         'estatus' => 'published', 

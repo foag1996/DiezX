@@ -17,7 +17,6 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -39,6 +38,9 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -72,12 +74,17 @@
                 </div>
             </div>
         </nav>
-
+        <div class="container ">
+            @if (count($errors) > 0)
+                @foreach ($errors->all() as $message)
+                <div class="alert alert-danger" role="alert">
+                  {{ $message }}
+                </div>
+                @endforeach
+            @endif
+        </div>
         <main class="py-4">
-            <div class="container">
-            @yield('content')    
-            </div>
-            
+            @yield('content')
         </main>
     </div>
 </body>
