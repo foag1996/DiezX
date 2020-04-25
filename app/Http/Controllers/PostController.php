@@ -52,7 +52,7 @@ class PostController extends Controller
         //dd($data);
 
         $post = Post::Create($data);
-
+        
         return redirect()->route('posts.index', compact($post));
     }
 

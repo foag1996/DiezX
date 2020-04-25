@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('comments', 'CommentController', ['except' => 'show', 'index']);
 Route::resource('posts', 'PostController', ['except' => 'show','index']);
-//Route::get('posts/create', 'PostController@create')->name('posts.create');
+Route::get('users', 'UserController@index')->name('users.index');
 
 
 });

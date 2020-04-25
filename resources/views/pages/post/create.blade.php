@@ -25,7 +25,7 @@
       <label for="bodyform">Body</label>
       <textarea class="form-control" id="bodyform" rows="3" name="body" required=""></textarea>
     </div>
-    <button class="btn btn-block btn-success">Save post</button>
+    <button id="create_post" class="btn btn-block btn-success">Save post</button>
   </form>
 </div>
 
